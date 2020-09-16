@@ -107,14 +107,12 @@ var modulo = function(x, y) {
         }
     } else if ((x < 0) && (y > 0)){
         if (x <= -y) {
-            console.log(x);
             return modulo((x + y), y);
         } else {
             return x;
         }
     } else if ((x < 0) && (y < 0)){
         if (x <= y) {
-            console.log(x);
             return modulo((x - y), y);
         } else {
             return x;
@@ -126,6 +124,38 @@ var modulo = function(x, y) {
 // 12. Write a function that multiplies two numbers without using the * operator or
 // Math methods.
 var multiply = function(x, y) {
+
+    if ((x === 0) || (y === 0)) {
+        return 0;
+    }
+
+    if ((x > 0) && (y > 0)) {
+        if (y === 1) {
+            return x;
+        } else {
+            return x + multiply(x, y - 1);
+        }
+    } else if ((x < 0) && (y < 0)) {
+        if (y === -1) {
+            return -x;
+        } else {
+            return -x + multiply(x, y + 1);
+        }
+    } else if ((x < 0) && (y > 0)) {
+        if (y === -1) {
+            return x;
+        } else {
+            return x + multiply(x, y - 1);
+        }
+    } else if ((x > 0) && (y < 0)) {
+        if (x === 1) {
+            return y;
+        } else {
+            return y + multiply(x - 1, y);
+        }
+    }
+    
+
 };
 
 // 13. Write a function that divides two numbers without using the / operator or
