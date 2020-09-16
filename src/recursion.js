@@ -60,6 +60,8 @@ var sumBelow = function(n) {
 // 6. Get the integers within a range (x, y).
 // range(2,9); // [3,4,5,6,7,8]
 var range = function(x, y) {
+     
+
 };
 
 // 7. Compute the exponent of a number.
@@ -90,7 +92,35 @@ var palindrome = function(string) {
 // modulo(5,2) // 1
 // modulo(17,5) // 2
 // modulo(22,6) // 4
-var modulo = function(x, y) {
+var modulo = function(x, y) {  
+
+
+    if (y === 0) {
+        return NaN;
+    }
+
+    if (x >= 0) {
+        if (x >= y) {
+            return modulo((x - y), y);
+        } else {
+            return x;
+        }
+    } else if ((x < 0) && (y > 0)){
+        if (x <= -y) {
+            console.log(x);
+            return modulo((x + y), y);
+        } else {
+            return x;
+        }
+    } else if ((x < 0) && (y < 0)){
+        if (x <= y) {
+            console.log(x);
+            return modulo((x - y), y);
+        } else {
+            return x;
+        }
+    }
+    
 };
 
 // 12. Write a function that multiplies two numbers without using the * operator or
