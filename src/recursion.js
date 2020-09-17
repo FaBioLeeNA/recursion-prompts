@@ -71,7 +71,11 @@ var sumBelow = function(n) {
 // 6. Get the integers within a range (x, y).
 // range(2,9); // [3,4,5,6,7,8]
 var range = function(x, y) {
-     
+    // if ((x + 1) === y) {
+    // return [].push(x+1);
+    // } else {
+    // return (range(x, y-1)).push(y-1);
+    // }
 
 };
 
@@ -116,6 +120,17 @@ var reverse = function(string) {
 
 // 10. Write a function that determines if a string is a palindrome.
 var palindrome = function(string) {
+    if (string.length <= 1)
+    {
+        return true;
+    }
+    var lowerString = string.toLowerCase();
+
+    if (lowerString[0] === lowerString[string.length - 1]) {
+        return palindrome(string.substring(1, string.length - 1));
+    } else {
+        return false;
+    }
 };
 
 // 11. Write a function that returns the remainder of x divided by y without using the
