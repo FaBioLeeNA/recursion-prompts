@@ -773,6 +773,8 @@
       });
 
       it('should return the quotient of two integers', function() {
+        expect(divide(-970, 82)).to.equal(~~(-970 / 82));
+        expect(divide(970, -82)).to.equal(~~(970 / -82));
         expect(divide(2, 1)).to.equal(~~(2 / 1));
         expect(divide(17, 5)).to.equal(~~(17 / 5));
         expect(divide(78, 453)).to.equal(~~(78 / 453));
