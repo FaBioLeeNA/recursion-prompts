@@ -133,7 +133,6 @@ var powerOfTwo = function(n) {
 // 9. Write a function that reverses a string.
 var reverse = function(string) {
     if (string.length === 1) {
-        // console.log(string);
         return string;
     } else {
         return string[string.length - 1] + reverse(string.substring(0, string.length - 1));
@@ -255,7 +254,6 @@ var divide = function(x, y) {
         }
     } else if ((x > 0) && (y < 0)) {
         if (x > -y) {
-            console.log(x);
             return (-1 + divide(x+y, y));
         } else if (x < -y) {
             return 0;
@@ -311,7 +309,6 @@ var compareStr = function(str1, str2) {
     }
 
     if (str1[0] === str2[0]) {
-        console.log(str1[0]);
         return compareStr(str1.slice(1, l1), str2.slice(1, l2));
     } else {
         return false;
