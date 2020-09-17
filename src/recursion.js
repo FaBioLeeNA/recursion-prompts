@@ -71,12 +71,28 @@ var sumBelow = function(n) {
 // 6. Get the integers within a range (x, y).
 // range(2,9); // [3,4,5,6,7,8]
 var range = function(x, y) {
-    // if ((x + 1) === y) {
-    // return [].push(x+1);
-    // } else {
-    // return (range(x, y-1)).push(y-1);
-    // }
-
+    
+    if ((x === y) || (x + 1 === y)) {
+        return [];
+    }
+    if (x < y) {
+        if (y - 1 === x + 1) {
+            return [x+1];
+        } else {
+            var answer = range(x, y - 1);
+            answer.push(y - 1);
+            return answer;
+        }
+    } else {
+        if (y + 1 === x - 1) {
+            return [x-1];
+        } else {
+            var answer = range(x, y + 1);
+            answer.push(y + 1);
+            return answer;
+        }
+    }
+    
 };
 
 // 7. Compute the exponent of a number.
@@ -221,6 +237,20 @@ var divide = function(x, y) {
 // http://www.cse.wustl.edu/~kjg/cse131/Notes/Recursion/recursion.html
 // https://www.khanacademy.org/computing/computer-science/cryptography/modarithmetic/a/the-euclidean-algorithm
 var gcd = function(x, y) {
+    if (x === 0) {
+        return y;
+    } else if (y === 0) {
+        return x;
+    }
+    if ((x < 0) || (y < 0)) {
+        return null;
+    }
+    if (x === y) {
+        return x;
+    }
+    var R = x % y;
+
+    return gcd(y, R);
 };
 
 // 15. Write a function that compares each character of two strings and returns true if
